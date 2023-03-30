@@ -1,0 +1,28 @@
+.app {
+  header {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 100px;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    h1 {
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 10px;
+      &:hover {
+        color: aqua;
+      }
+    }
+    input[type="text"] {
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      border: 2px solid aqua;
+    }
+  }
+}
