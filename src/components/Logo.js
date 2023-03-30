@@ -1,7 +1,12 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Logo = () => {
-  return <img src="/assets/imgs/logo192.png" alt="logo" />;
+  return (
+    <NavLink to="/">
+      <img src="/assets/imgs/logo192.png" alt="logo" />
+    </NavLink>
+  );
 };
 
 export default Logo;

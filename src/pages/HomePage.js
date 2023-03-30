@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../components/Logo";
 import Card from "../components/Card";
 import axios from "axios";
 
 const HomePage = () => {
   let [countries, setCountries] = useState([]);
-  const inputRef = useRef();
+  let [searchInput, setSearchInput] = useState("");
+  let [rangeInput, setRangeInput] = useState(12);
 
   const fetchCountries = () => {
     axios
@@ -23,21 +24,29 @@ const HomePage = () => {
         <input
           type="text"
           id="searchInput"
+          onChange={(e) => setSearchInput(e.target.value)}
           placeholder="Tappez le nom du pays"
         />
         <input
           type="range"
           id="rangeInput"
           defaultValue="12"
+          onChange={(e) => setRangeInput(e.target.value)}
           min="0"
           max="50"
-          ref={inputRef}
         />
       </header>
       <section className="flags-container">
-        {countries.map((country, index) => (
-          <Card key={index} c={country} />
-        ))}
+        {countries
+          .slice(0, rangeInput)
+          .filter((country) =>
+            country.translations.fra.common
+              .toLowerCase()
+              .includes(searchInput.toLowerCase())
+          )
+          .map((country, index) => (
+            <Card key={index} c={country} />
+          ))}
       </section>
     </div>
   );
