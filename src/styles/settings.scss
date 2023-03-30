@@ -8,6 +8,13 @@ body {
   background-color: black;
   color: white;
   height: 100vh;
-  overflow: hidden;
+  // overflow: hidden;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@mixin verticalAlign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

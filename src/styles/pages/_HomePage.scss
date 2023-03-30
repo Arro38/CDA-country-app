@@ -25,4 +25,10 @@
       border: 2px solid aqua;
     }
   }
+  .flags-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }

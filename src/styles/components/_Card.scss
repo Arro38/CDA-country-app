@@ -1,0 +1,32 @@
+.card {
+  width: 200px;
+  height: 150px;
+  position: relative;
+  transform: scale(1);
+  &:hover {
+    transform: scale(1.2);
+    .img-container {
+      opacity: 0.1;
+    }
+    .info-container {
+      opacity: 1;
+    }
+  }
+  .img-container {
+    opacity: 1;
+    img {
+      width: 100%;
+      object-fit: cover;
+      width: 200px;
+      height: 150px;
+    }
+  }
+  .info-container {
+    position: absolute;
+    top: 0;
+    @include verticalAlign;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+  }
+}
